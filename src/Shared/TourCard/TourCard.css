@@ -1,0 +1,62 @@
+.tour-card {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.tour-card .card-img {
+  width: 100%;
+  height: 180px;
+}
+.tour-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tour-card .content {
+  padding: 10px 12px;
+}
+.tour-card .location {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.tour-card .icon {
+  font-size: 15px;
+  color: #5e6d77;
+  margin-right: 8px;
+}
+.tour-card .location .location-name {
+  font-size: 15px;
+  color: #5e6d77;
+}
+.tour-card h3 {
+  color: #1a2b50;
+  font-weight: 500;
+  line-height: 1.1;
+  font-size: 16px;
+}
+.tour-card .footer-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tour-card .footer-card .time {
+  font-size: 14px;
+  color: #5e6d77;
+}
+.tour-card .footer-card .price-section {
+  display: flex;
+  align-items: center;
+  color: #5e6d77;
+}
+.tour-card .footer-card .price-section .icon {
+  font-size: 25px;
+  color: #bb8f00;
+  margin: 0;
+}
+.tour-card .footer-card .price {
+  font-size: 20px;
+  color: #bb8f00;
+  font-weight: 600;
+  margin-left: 5px;
+}
