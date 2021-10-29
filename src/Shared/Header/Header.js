@@ -17,10 +17,10 @@ const Header = () => {
                 Home
               </Nav.Link>
               <Nav.Link as={Link} to="/about">
-                About
+                My Booking
               </Nav.Link>
               <Nav.Link as={Link} to="/Tour">
-                Tour
+                All booking management
               </Nav.Link>
             </Nav>
             <Link to="/login">

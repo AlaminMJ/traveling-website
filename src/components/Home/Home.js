@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 // import TourCard from "../../Shared/TourCard/TourCard";
 // import useAuth from "../../Hooks/useAuth";
 import TourCard from "../../Shared/TourCard/TourCard";
 
 const Home = () => {
+  const [tourList, setTourList] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/")
+      .then((res) => res.json())
+      .then((data) => setTourList(data));
+  }, []);
   return (
     <div className="home">
       <div className="banner">
@@ -23,17 +30,25 @@ const Home = () => {
         </h3>
 
         <div className="card-container py-2">
-          <TourCard></TourCard>
-          <TourCard></TourCard>
-          <TourCard></TourCard>
-          <TourCard></TourCard>
-          <TourCard></TourCard>
-          <TourCard></TourCard>
+          {tourList.length > 0 ? (
+            tourList.map((item) => (
+              <TourCard key={item._id} data={item}></TourCard>
+            ))
+          ) : (
+            <div className="d-flex justify-content-center">
+              <Spinner animation="border my-5" variant="primary" />
+            </div>
+          )}
         </div>
       </div>
       {/* Get Update section */}
       <section className="py-5 bg-primary">
-        <div className="container py-5"></div>
+        <div className="container">
+          <div className="d-flex justify-content-space-between aline-item-center">
+            <div className="left">LEfg</div>
+            <div className="right">Right</div>
+          </div>
+        </div>
       </section>
     </div>
   );

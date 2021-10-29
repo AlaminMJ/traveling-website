@@ -20,13 +20,13 @@ input:focus {
   grid-gap: 30px;
 }
 
-@media screen and (max-width: 678px) {
-  .card-container {
+@media screen and (max-width: 900px) {
+  .home .card-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 460px) {
-  .card-container {
+  .home .card-container {
     grid-template-columns: repeat(1, 1fr);
   }
 }

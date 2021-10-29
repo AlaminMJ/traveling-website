@@ -3,36 +3,34 @@ import "./TourCard.css";
 import { IoIosFlash } from "react-icons/io";
 import { BsClock } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
-const TourCard = () => {
+const TourCard = ({ data }) => {
+  const { location, title, photoURL, time, cost } = data;
   return (
     <div className="tour-card ">
       <div className="card-img">
-        <img
-          src="https://tomap.travelerwp.com/wp-content/uploads/2015/01/iStock_000037401046XXXLarge-680x500.jpg"
-          alt=""
-        />
+        <img src={photoURL} alt="" />
       </div>
       <div className="content">
         <div className="location">
           <span className="icon">
             <GoLocation />
           </span>
-          <span className="location-name">Chicago, IL, USA</span>
+          <span className="location-name">{location}</span>
         </div>
-        <h3>Harvard: 70-Minute Hahvahd Tour</h3>
+        <h3>{title}</h3>
         <div className="footer-card">
           <div className="time">
             <span className="icon">
               <BsClock />
             </span>
-            <span>4 days</span>
+            <span>{time}</span>
           </div>
           <div className="price-section">
             <span className="icon">
               <IoIosFlash />
             </span>
             <span>from</span>
-            <span className="price">$89.00</span>
+            <span className="price">${cost}</span>
           </div>
         </div>
       </div>
