@@ -5,7 +5,7 @@ import { BsClock } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 const TourCard = () => {
   return (
-    <div className="tour-card">
+    <div className="tour-card ">
       <div className="card-img">
         <img
           src="https://tomap.travelerwp.com/wp-content/uploads/2015/01/iStock_000037401046XXXLarge-680x500.jpg"
