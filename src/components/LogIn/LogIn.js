@@ -9,7 +9,7 @@ const LogIn = () => {
   const location = useLocation();
   const url = location.state?.from || "/";
 
-  const { logInWithGoogle, logOut } = useFirebase();
+  const { logInWithGoogle } = useFirebase();
   const handelGoogleLogIn = () => {
     logInWithGoogle()
       .then(() => {
@@ -46,21 +46,15 @@ const LogIn = () => {
               </Button>
             </div>
           </Form>
+          <hr />
+          <p className="text-center">Log in with google</p>
           <Button
-            variant="primary"
+            variant="danger"
             type="submit"
-            className="btn btn-block btn-primary text-uppercase px-5"
+            className="btn btn-block btn-primary text-uppercase px-5 mt-1"
             onClick={handelGoogleLogIn}
           >
-            Submit
-          </Button>
-          <Button
-            variant="primary"
-            type="submit"
-            className="btn btn-block btn-primary text-uppercase px-5"
-            onClick={logOut}
-          >
-            Submit
+            Google
           </Button>
         </Card.Body>
       </Card>
