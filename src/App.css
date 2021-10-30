@@ -14,19 +14,20 @@ input:focus {
   background-size: cover;
 }
 
-.home .card-container {
+.home .card-container,.card-wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
 
+
 @media screen and (max-width: 900px) {
-  .home .card-container {
+  .home .card-container,.card-wrap {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 460px) {
-  .home .card-container {
+  .home .card-container,.card-wrap {
     grid-template-columns: repeat(1, 1fr);
   }
 }

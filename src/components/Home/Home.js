@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
-// import TourCard from "../../Shared/TourCard/TourCard";
-// import useAuth from "../../Hooks/useAuth";
+import {
+  InputGroup,
+  Spinner,
+  Button,
+  FormControl,
+  Row,
+  Col,
+} from "react-bootstrap";
 import TourCard from "../../Shared/TourCard/TourCard";
 
 const Home = () => {
@@ -9,7 +14,10 @@ const Home = () => {
   useEffect(() => {
     fetch("http://localhost:5000/")
       .then((res) => res.json())
-      .then((data) => setTourList(data));
+      .then((data) => setTourList(data))
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <div className="home">
@@ -42,12 +50,28 @@ const Home = () => {
         </div>
       </div>
       {/* Get Update section */}
-      <section className="py-5 bg-primary">
+      <section className="py-5" style={{ backgroundColor: "#f0f2f5" }}>
         <div className="container">
-          <div className="d-flex justify-content-space-between aline-item-center">
-            <div className="left">LEfg</div>
-            <div className="right">Right</div>
-          </div>
+          <Row className="d-flex justify-content-between align-items-center">
+            <Col md className=" d-flex">
+              <img
+                src="https://mixmap.travelerwp.com/wp-content/themes/traveler/v2/images/svg/ico_email_subscribe.svg"
+                alt="massage"
+              />
+              <div className="content ms-4">
+                <h4>Get Updates & More</h4>
+                <p>Thoughtful thoughts to your inbox</p>
+              </div>
+            </Col>
+            <Col md >
+              <InputGroup size="lg">
+                <FormControl placeholder="Enter your Email" />
+                <Button variant="primary" id="button-addon1">
+                  SUBSCRIB
+                </Button>
+              </InputGroup>
+            </Col>
+          </Row>
         </div>
       </section>
     </div>

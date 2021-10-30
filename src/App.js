@@ -9,6 +9,7 @@ import OrderPlace from "./components/OrderPlace/OrderPlace";
 import AuthContext from "./Context/AuthContext";
 import Header from "./Shared/Header/Header";
 import "./App.css";
+import Footer from "./Shared/Footer/Footer";
 function App() {
   return (
     <div className="App">
@@ -35,6 +36,7 @@ function App() {
               <AddService></AddService>
             </PrivateRoute>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthContext>
     </div>
