@@ -49,6 +49,16 @@ input:focus {
   background-position: center;
   background-size: cover;
 }
+.contact .banner {
+  background-image: url("https://homap.travelerwp.com/wp-content/uploads/2018/12/gallary_4-1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.about .banner {
+  background-image: url("https://homap.travelerwp.com/wp-content/uploads/2018/12/gallary_5.jpg");
+  background-position: center;
+  background-size: cover;
+}
 .footer ul li {
   margin-bottom: 5px;
   color: #333;
