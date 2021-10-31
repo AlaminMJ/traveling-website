@@ -3,11 +3,11 @@ import { IoIosFlash } from "react-icons/io";
 import { BsClock } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { Button } from "react-bootstrap";
-import DeleteMModal from "../DeleteModal/DeleteModal";
+// import DeleteMModal from "../DeleteModal/DeleteModal";
 
-const TourCard = ({ data, handelDeleteOrder, deleteId }) => {
+const TourCard = ({ data, handelDeleteOrder, deleteId, status }) => {
   const { location, title, photoURL, time, cost } = data;
-  const [modalShow, setModalShow] = React.useState(false);
+  // const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <div className="tour-card ">
@@ -37,23 +37,19 @@ const TourCard = ({ data, handelDeleteOrder, deleteId }) => {
             <span className="price">${cost}</span>
           </div>
         </div>
-        <DeleteMModal
-          deleteId={deleteId}
-          handelDeleteOrder={handelDeleteOrder}
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-        />
-        <Button
-          variant={"danger"}
-          size="sm"
-          className="me-auto"
-          onClick={() => {}}
-        >
-          Cancel
-        </Button>
-        <Button variant="primary" onClick={() => setModalShow(true)}>
-          Delete
-        </Button>
+        <div className="d-flex">
+          <Button
+            variant={"danger"}
+            size="sm"
+            className="me-auto"
+            onClick={() => handelDeleteOrder(deleteId)}
+          >
+            Cancel
+          </Button>
+          <div className={status === "approve" ? "status active" : "status "}>
+            {status}
+          </div>
+        </div>
       </div>
     </div>
   );

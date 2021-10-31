@@ -41,6 +41,7 @@ const OrderPlace = () => {
     order.email = user.email;
     order.address = address;
     order.number = number;
+    order.status = "pending";
     order.tourplace = tourDatails;
     order.date = date;
     axios

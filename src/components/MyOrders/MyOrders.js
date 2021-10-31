@@ -16,15 +16,11 @@ const MyOrders = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [user,myOrder]);
+  }, [user, myOrder]);
 
   const handelDeleteOrder = (id) => {
-    fetch(`http://localhost:5000/deleteorder`, {
+    fetch(`http://localhost:5000/order/${id}`, {
       method: "DELETE",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-      body: JSON.stringify({ id }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -41,13 +37,14 @@ const MyOrders = () => {
     <div>
       <h3 className="display-3 text-center py-2">My Orders</h3>
       <Container>
-        <div className="card-wrap">
+        <div className="card-wrap py-5">
           {myOrder.map((item) => (
             <MyOrderCard
               key={item._id}
               data={item.tourplace}
               handelDeleteOrder={handelDeleteOrder}
               deleteId={item._id}
+              status={item.status}
             ></MyOrderCard>
           ))}
         </div>
