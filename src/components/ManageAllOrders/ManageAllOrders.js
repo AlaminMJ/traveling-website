@@ -10,19 +10,20 @@ const ManageAllOrders = () => {
       .then((res) => setOrders(res.data));
   }, [orders]);
   const handelDeleteOrder = (id) => {
-    fetch(`http://localhost:5000/order/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          alert("Delete Successfull");
-          setOrders(orders.filter((item) => item._id !== id));
-        }
+    if (window.confirm("Are you sure to Delet")) {
+      fetch(`http://localhost:5000/order/${id}`, {
+        method: "DELETE",
       })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount) {
+            setOrders(orders.filter((item) => item._id !== id));
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
   const handelApprove = (id) => {
     axios
@@ -39,7 +40,14 @@ const ManageAllOrders = () => {
     <div>
       <h3 className="display-3 text-center py-5">Manage All Orders</h3>
       <Container>
-        <Table striped bordered hover size="sm" className="text-center">
+        <Table
+          striped
+          bordered
+          hover
+          size="sm"
+          className="text-center"
+          responsive
+        >
           <thead>
             <tr>
               <th>#</th>

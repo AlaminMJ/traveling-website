@@ -48,14 +48,16 @@ const LogIn = () => {
           </Form>
           <hr />
           <p className="text-center">Log in with google</p>
-          <Button
-            variant="danger"
-            type="submit"
-            className="btn btn-block btn-primary text-uppercase px-5 mt-1"
-            onClick={handelGoogleLogIn}
-          >
-            Google
-          </Button>
+          <div className="d-grid gap-2">
+            <Button
+              variant="danger"
+              type="submit"
+              className="btn btn-block btn-primary text-uppercase px-5 mt-1"
+              onClick={handelGoogleLogIn}
+            >
+              Google
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     </div>

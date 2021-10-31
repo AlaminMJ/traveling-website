@@ -19,19 +19,20 @@ const MyOrders = () => {
   }, [user, myOrder]);
 
   const handelDeleteOrder = (id) => {
-    fetch(`http://localhost:5000/order/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          alert("Delete Successfull");
-          setMyOrder(myOrder.filter((item) => item._id !== id));
-        }
+    if (window.confirm("Are You sure for Delete")) {
+      fetch(`http://localhost:5000/order/${id}`, {
+        method: "DELETE",
       })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount) {
+            setMyOrder(myOrder.filter((item) => item._id !== id));
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
   return (
     <div>

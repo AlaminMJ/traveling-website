@@ -3,11 +3,9 @@ import { IoIosFlash } from "react-icons/io";
 import { BsClock } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { Button } from "react-bootstrap";
-// import DeleteMModal from "../DeleteModal/DeleteModal";
 
 const TourCard = ({ data, handelDeleteOrder, deleteId, status }) => {
   const { location, title, photoURL, time, cost } = data;
-  // const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <div className="tour-card ">

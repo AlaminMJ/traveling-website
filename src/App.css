@@ -13,9 +13,7 @@ input:focus {
   font-size: 14px;
 }
 .status.active {
-
   background-color: #51f5956e;
-
 }
 .home .banner {
   width: 100%;
@@ -31,7 +29,33 @@ input:focus {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
-
+.social ul {
+  align-items: center;
+  justify-content: center;
+}
+.social li {
+  width: 45px;
+  height: 45px;
+  border: 1px solid gray;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 5px;
+  font-size: 22px;
+}
+.Rental {
+  width: 100%;
+  height: 50vh;
+  background-image: url("https://remap.travelerwp.com/wp-content/uploads/2019/04/photo-1422190441165-ec2956dc9ecc-1.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+.footer ul li {
+  margin-bottom: 5px;
+  color: #333;
+}
+.footer ul li:hover {
+  color: royalblue;
+}
 @media screen and (max-width: 900px) {
   .home .card-container,
   .card-wrap {

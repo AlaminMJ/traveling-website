@@ -16,7 +16,7 @@ const OrderPlace = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const url = `http://localhost:5000/${id}`;
+    const url = `http://localhost:5000/service/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -49,7 +49,7 @@ const OrderPlace = () => {
       .then(function (response) {
         console.log(response);
         if (response?.data?.insertedId) {
-          alert("orser SuccessFull");
+          alert("Order Successfully");
           history.push("/");
         }
       })

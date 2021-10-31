@@ -32,7 +32,7 @@ const AddService = () => {
     <div>
       <Container>
         <h3 className="display-3 text-center py-2">Add Service</h3>
-        <Form className="w-50 mx-auto py-3" onSubmit={handelAddService}>
+        <Form className="w-75 mx-auto py-3" onSubmit={handelAddService}>
           <Row className="mb-3">
             <Form.Group controlId="formGridEmail">
               <Form.Label>Location</Form.Label>

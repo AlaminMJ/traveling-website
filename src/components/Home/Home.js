@@ -6,13 +6,15 @@ import {
   FormControl,
   Row,
   Col,
+  Container,
 } from "react-bootstrap";
+
 import TourCard from "../../Shared/TourCard/TourCard";
 
 const Home = () => {
   const [tourList, setTourList] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/")
+    fetch("http://localhost:5000/service")
       .then((res) => res.json())
       .then((data) => setTourList(data))
       .catch((err) => {
@@ -22,13 +24,13 @@ const Home = () => {
   return (
     <div className="home">
       <div className="banner">
-        <div className="container ">
-          <h1 className="display-1 text-white pt-5">
+        <div className="container py-5 ">
+          <h1 className="display-1 text-white pt-5 mt-5">
             Welcome to
             <br />
-            <span className="">Traveler</span>
+            <span className="text-warning">Traveler</span>
           </h1>
-          <h5 className="display-5 text-white"> Where you like to go?</h5>
+          <h5 className="display-6 text-white"> Where you like to go?</h5>
         </div>
       </div>
       {/* Tour section */}
@@ -49,6 +51,16 @@ const Home = () => {
           )}
         </div>
       </div>
+      {/* Rental */}
+      <section className="py-5 Rental">
+        <Container className="py-5">
+          <h4 className="display-4">Add Your Rental Listing</h4>
+          <h5 className="display-6" style={{ color: " #5e6d77" }}>
+            Homes highly rated for thoughtful design
+          </h5>
+          <Button className="px-5 mt-3">Create Listening</Button>
+        </Container>
+      </section>
       {/* Get Update section */}
       <section className="py-5" style={{ backgroundColor: "#f0f2f5" }}>
         <div className="container">
@@ -63,7 +75,7 @@ const Home = () => {
                 <p>Thoughtful thoughts to your inbox</p>
               </div>
             </Col>
-            <Col md >
+            <Col md>
               <InputGroup size="lg">
                 <FormControl placeholder="Enter your Email" />
                 <Button variant="primary" id="button-addon1">

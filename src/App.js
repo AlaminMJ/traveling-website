@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Home from "./components/Home/Home";
 import MyOrders from "./components/MyOrders/MyOrders";
+import NotFound from "./components/NotFound/NotFound";
 import AddService from "./components/AddService/AddService";
 import ManageAllOrders from "./components/ManageAllOrders/ManageAllOrders";
 import OrderPlace from "./components/OrderPlace/OrderPlace";
@@ -35,6 +36,9 @@ function App() {
             <PrivateRoute path="/addservice">
               <AddService></AddService>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
           <Footer></Footer>
         </Router>
