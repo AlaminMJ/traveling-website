@@ -1,11 +1,43 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import {
+  Col,
+  Container,
+  FormControl,
+  InputGroup,
+  Row,
+  Button,
+} from "react-bootstrap";
 import { GrFacebookOption } from "react-icons/gr";
 import { FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div className="py-5 footer">
+      {/* Get Update section */}
+      <section className="py-5" style={{ backgroundColor: "#f0f2f5" }}>
+        <div className="container">
+          <Row className="d-flex justify-content-between align-items-center">
+            <Col md className=" d-flex">
+              <img
+                src="https://mixmap.travelerwp.com/wp-content/themes/traveler/v2/images/svg/ico_email_subscribe.svg"
+                alt="massage"
+              />
+              <div className="content ms-4">
+                <h4>Get Updates & More</h4>
+                <p>Thoughtful thoughts to your inbox</p>
+              </div>
+            </Col>
+            <Col md>
+              <InputGroup size="lg">
+                <FormControl placeholder="Enter your Email" />
+                <Button variant="primary" id="button-addon1">
+                  SUBSCRIB
+                </Button>
+              </InputGroup>
+            </Col>
+          </Row>
+        </div>
+      </section>
       <Container>
         <Row>
           <Col md={6} lg={3}>

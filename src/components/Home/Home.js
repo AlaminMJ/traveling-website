@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
-  InputGroup,
-  Spinner,
-  Button,
-  FormControl,
-  Row,
-  Col,
-  Container,
-} from "react-bootstrap";
+import DistinationCard from "../../Shared/DistinationCard/DistinationCard";
+import { Spinner, Button, Container } from "react-bootstrap";
 
 import TourCard from "../../Shared/TourCard/TourCard";
 
@@ -51,6 +44,54 @@ const Home = () => {
           )}
         </div>
       </div>
+      {/*  */}
+      <Container>
+        <h3 className="display-6 ">Top Destinations</h3>
+        <div className="destaintions-container py-5">
+          <DistinationCard
+            img={
+              "https://homap.travelerwp.com/wp-content/uploads/2015/02/virgi_3-1024x1024-370x370.jpg"
+            }
+            name={"Virginia"}
+            property={"20 properties"}
+          ></DistinationCard>
+          <DistinationCard
+            img={
+              "https://homap.travelerwp.com/wp-content/uploads/2015/02/san_francisco-1024x1024-370x370.jpg"
+            }
+            name={"Virginia"}
+            property={"20 properties"}
+          ></DistinationCard>
+          <DistinationCard
+            img={
+              "https://homap.travelerwp.com/wp-content/uploads/2014/11/cali_5-1024x1024-370x370.jpg"
+            }
+            name={"California"}
+            property={"17 properties"}
+          ></DistinationCard>
+          <DistinationCard
+            img={
+              "https://homap.travelerwp.com/wp-content/uploads/2015/02/cheapest-car-insurance-in-new-jersey-nj-story-370x370.jpg"
+            }
+            name={"San Francisco"}
+            property={"15properties"}
+          ></DistinationCard>
+          <DistinationCard
+            img={
+              "https://homap.travelerwp.com/wp-content/uploads/2015/02/san_francisco-1024x1024-370x370.jpg"
+            }
+            name={"Alexiya malo"}
+            property={"18 properties"}
+          ></DistinationCard>
+          <DistinationCard
+            img={
+              "https://homap.travelerwp.com/wp-content/uploads/2018/12/nevaga_2-1024x1024-370x370.jpg"
+            }
+            name={"Navada"}
+            property={"20 properties"}
+          ></DistinationCard>
+        </div>
+      </Container>
       {/* Rental */}
       <section className="py-5 Rental">
         <Container className="py-5">
@@ -60,31 +101,6 @@ const Home = () => {
           </h5>
           <Button className="px-5 mt-3">Create Listening</Button>
         </Container>
-      </section>
-      {/* Get Update section */}
-      <section className="py-5" style={{ backgroundColor: "#f0f2f5" }}>
-        <div className="container">
-          <Row className="d-flex justify-content-between align-items-center">
-            <Col md className=" d-flex">
-              <img
-                src="https://mixmap.travelerwp.com/wp-content/themes/traveler/v2/images/svg/ico_email_subscribe.svg"
-                alt="massage"
-              />
-              <div className="content ms-4">
-                <h4>Get Updates & More</h4>
-                <p>Thoughtful thoughts to your inbox</p>
-              </div>
-            </Col>
-            <Col md>
-              <InputGroup size="lg">
-                <FormControl placeholder="Enter your Email" />
-                <Button variant="primary" id="button-addon1">
-                  SUBSCRIB
-                </Button>
-              </InputGroup>
-            </Col>
-          </Row>
-        </div>
       </section>
     </div>
   );
