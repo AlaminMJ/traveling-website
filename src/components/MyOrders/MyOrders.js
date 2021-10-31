@@ -9,7 +9,7 @@ const MyOrders = () => {
   const { user } = useAuth();
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/myorder/${user?.email}`)
+      .get(`https://howling-grave-27683.herokuapp.com/myorder/${user?.email}`)
       .then((responst) => {
         setMyOrder(responst.data);
       })
@@ -20,7 +20,7 @@ const MyOrders = () => {
 
   const handelDeleteOrder = (id) => {
     if (window.confirm("Are You sure for Delete")) {
-      fetch(`http://localhost:5000/order/${id}`, {
+      fetch(`https://howling-grave-27683.herokuapp.com/order/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

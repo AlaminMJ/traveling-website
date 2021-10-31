@@ -6,12 +6,12 @@ const ManageAllOrders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/allorder")
+      .get("https://howling-grave-27683.herokuapp.com/allorder")
       .then((res) => setOrders(res.data));
   }, [orders]);
   const handelDeleteOrder = (id) => {
     if (window.confirm("Are you sure to Delet")) {
-      fetch(`http://localhost:5000/order/${id}`, {
+      fetch(`https://howling-grave-27683.herokuapp.com/order/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -27,7 +27,7 @@ const ManageAllOrders = () => {
   };
   const handelApprove = (id) => {
     axios
-      .put(`http://localhost:5000/order/${id}`)
+      .put(`https://howling-grave-27683.herokuapp.com/order/${id}`)
       .then((res) => {
         if (res.data.modifiedCount) {
           alert("approve successfully");

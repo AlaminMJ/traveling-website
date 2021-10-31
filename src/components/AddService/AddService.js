@@ -19,7 +19,7 @@ const AddService = () => {
     };
 
     axios
-      .post("http://localhost:5000/addservice", newService)
+      .post("https://howling-grave-27683.herokuapp.com/addservice", newService)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Inserted service successfully");

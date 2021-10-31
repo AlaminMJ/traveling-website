@@ -14,7 +14,7 @@ import TourCard from "../../Shared/TourCard/TourCard";
 const Home = () => {
   const [tourList, setTourList] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch("https://howling-grave-27683.herokuapp.com/service")
       .then((res) => res.json())
       .then((data) => setTourList(data))
       .catch((err) => {

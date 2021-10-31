@@ -16,7 +16,7 @@ const OrderPlace = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://howling-grave-27683.herokuapp.com/service/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -45,7 +45,7 @@ const OrderPlace = () => {
     order.tourplace = tourDatails;
     order.date = date;
     axios
-      .post("http://localhost:5000/placeorder", order)
+      .post("https://howling-grave-27683.herokuapp.com/placeorder", order)
       .then(function (response) {
         console.log(response);
         if (response?.data?.insertedId) {
